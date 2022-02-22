@@ -21,7 +21,8 @@
         android:id="@+id/inicioSesionFragment2"
         android:name="com.example.cinesaapp.InicioSesionFragment"
         android:label="fragment_inicio_sesion"
-        tools:layout="@layout/fragment_inicio_sesion" />
+        tools:layout="@layout/fragment_inicio_sesion" >
+    </fragment>
     <fragment
         android:id="@+id/recordarContrasenaFragment"
         android:name="com.example.cinesaapp.RecordarContrasenaFragment"
@@ -32,6 +33,11 @@
         android:name="com.example.cinesaapp.RecordarContrasena2Fragment"
         android:label="fragment_recordar_contrasena2"
         tools:layout="@layout/fragment_recordar_contrasena2" />
+    <fragment
+        android:id="@+id/inicioSesionFacebookFragment"
+        android:name="com.example.cinesaapp.InicioSesionFacebookFragment"
+        android:label="fragment_inicio_sesion_facebook"
+        tools:layout="@layout/fragment_inicio_sesion_facebook" />
 
     <action
         android:id="@+id/action_inicio"
@@ -45,4 +51,7 @@
     <action
         android:id="@+id/action_recordarContrasena2"
         app:destination="@+id/recordarContrasena2Fragment"/>
+    <action
+        android:id="@+id/action_inicioSesionFacebook"
+        app:destination="@id/inicioSesionFacebookFragment" />
 </navigation>

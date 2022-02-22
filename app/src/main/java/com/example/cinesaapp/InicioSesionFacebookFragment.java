@@ -8,44 +8,33 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
-public class InicioFragment extends Fragment {
+public class InicioSesionFacebookFragment extends Fragment {
 
     NavController navController;
-    Button inicioSesion;
-    Button inicioSesionFacebook;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio, container, false);
+        return inflater.inflate(R.layout.fragment_inicio_sesion_facebook, container, false);
     }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
-        inicioSesion = view.findViewById(R.id.iniciarSesion);
-        inicioSesion.setOnClickListener(new View.OnClickListener() {
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_inicioSesion);
+            public void run() {
+                // Do something after 5s = 5000ms
+                navController.navigate(R.id.action_inicio);
             }
-        })
-        ;
-
-        inicioSesionFacebook = view.findViewById(R.id.iniciarSesionFacebook);
-        inicioSesionFacebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_inicioSesionFacebook);
-            }
-        })
-        ;
+        }, 3000);
     }
 }
