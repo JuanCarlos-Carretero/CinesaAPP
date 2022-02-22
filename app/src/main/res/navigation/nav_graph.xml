@@ -10,22 +10,39 @@
         android:name="com.example.cinesaapp.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_inicio"
-            app:destination="@id/inicioFragment2" />
     </fragment>
     <fragment
         android:id="@+id/inicioFragment2"
         android:name="com.example.cinesaapp.InicioFragment"
         android:label="fragment_inicio"
         tools:layout="@layout/fragment_inicio" >
-        <action
-            android:id="@+id/action_inicioSesion"
-            app:destination="@id/inicioSesionFragment2" />
     </fragment>
     <fragment
         android:id="@+id/inicioSesionFragment2"
-        android:name="com.example.cinesaapp.inicioSesionFragment"
+        android:name="com.example.cinesaapp.InicioSesionFragment"
         android:label="fragment_inicio_sesion"
         tools:layout="@layout/fragment_inicio_sesion" />
+    <fragment
+        android:id="@+id/recordarContrasenaFragment"
+        android:name="com.example.cinesaapp.RecordarContrasenaFragment"
+        android:label="fragment_recordar_contrasena"
+        tools:layout="@layout/fragment_recordar_contrasena" />
+    <fragment
+        android:id="@+id/recordarContrasena2Fragment"
+        android:name="com.example.cinesaapp.RecordarContrasena2Fragment"
+        android:label="fragment_recordar_contrasena2"
+        tools:layout="@layout/fragment_recordar_contrasena2" />
+
+    <action
+        android:id="@+id/action_inicio"
+        app:destination="@id/inicioFragment2" />
+    <action
+        android:id="@+id/action_recordarContrasena"
+        app:destination="@id/recordarContrasenaFragment" />
+    <action
+        android:id="@+id/action_inicioSesion"
+        app:destination="@id/inicioSesionFragment2" />
+    <action
+        android:id="@+id/action_recordarContrasena2"
+        app:destination="@+id/recordarContrasena2Fragment"/>
 </navigation>

@@ -76,23 +76,23 @@
         android:textColorHint="@color/white"
         android:hint="Contraseña"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/recordarContrasena"
+        app:layout_constraintBottom_toTopOf="@+id/enviarMail"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
 
     <Button
-        android:id="@+id/recordarContrasena"
+        android:id="@+id/enviarMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recordar Contraseña"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="12dp"
+        android:backgroundTint="@color/trasparent"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberPassword" />
-
 
     <Button
         android:id="@+id/button"
