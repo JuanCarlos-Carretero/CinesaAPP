@@ -38,6 +38,16 @@
         android:name="com.example.cinesaapp.InicioSesionFacebookFragment"
         android:label="fragment_inicio_sesion_facebook"
         tools:layout="@layout/fragment_inicio_sesion_facebook" />
+    <fragment
+        android:id="@+id/registroFragment"
+        android:name="com.example.cinesaapp.RegistroFragment"
+        android:label="fragment_registro"
+        tools:layout="@layout/fragment_registro" />
+    <fragment
+        android:id="@+id/registro2Fragment"
+        android:name="com.example.cinesaapp.Registro2Fragment"
+        android:label="fragment_registro2"
+        tools:layout="@layout/fragment_registro2" />
 
     <action
         android:id="@+id/action_inicio"
@@ -54,4 +64,10 @@
     <action
         android:id="@+id/action_inicioSesionFacebook"
         app:destination="@id/inicioSesionFacebookFragment" />
+    <action
+        android:id="@+id/action_registrarse"
+        app:destination="@+id/registroFragment"/>
+    <action
+        android:id="@+id/action_registrarse2"
+        app:destination="@id/registro2Fragment"/>
 </navigation>

@@ -18,6 +18,7 @@ public class InicioFragment extends Fragment {
     NavController navController;
     Button inicioSesion;
     Button inicioSesionFacebook;
+    Button registrarse;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,6 +45,15 @@ public class InicioFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_inicioSesionFacebook);
+            }
+        })
+        ;
+
+        registrarse = view.findViewById(R.id.registrarse);
+        registrarse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_registrarse);
             }
         })
         ;

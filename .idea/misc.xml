@@ -10,6 +10,9 @@
         <entry key="..\:/Users/Juank/AndroidStudioProjects/CinesaAPP/app/src/main/res/layout/fragment_inicio_sesion_facebook.xml" value="0.3625" />
         <entry key="..\:/Users/Juank/AndroidStudioProjects/CinesaAPP/app/src/main/res/layout/fragment_recordar_contrasena.xml" value="0.3625" />
         <entry key="..\:/Users/Juank/AndroidStudioProjects/CinesaAPP/app/src/main/res/layout/fragment_recordar_contrasena2.xml" value="0.3625" />
+        <entry key="app/src/main/res/layout/fragment_inicio_sesion.xml" value="0.19972826086956522" />
+        <entry key="app/src/main/res/layout/fragment_registro.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_registro2.xml" value="0.35885416666666664" />
       </map>
     </option>
   </component>
