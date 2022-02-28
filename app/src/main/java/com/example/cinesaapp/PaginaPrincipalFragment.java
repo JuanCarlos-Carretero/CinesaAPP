@@ -11,19 +11,19 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageButton;
 
-public class InicioSesionFragment extends Fragment {
+
+public class PaginaPrincipalFragment extends Fragment {
 
     NavController navController;
-    Button recordarContrasena;
-    Button iniciarSesion;
+    ImageButton botonPerfil;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inicio_sesion, container, false);
+        return inflater.inflate(R.layout.fragment_pagina_principal, container, false);
     }
 
     @Override
@@ -31,20 +31,11 @@ public class InicioSesionFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
 
-        recordarContrasena = view.findViewById(R.id.enviarMail);
-        recordarContrasena.setOnClickListener(new View.OnClickListener() {
+        botonPerfil = view.findViewById(R.id.botonPerfil);
+        botonPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_recordarContrasena);
-            }
-        })
-        ;
-
-        iniciarSesion = view.findViewById(R.id.button);
-        iniciarSesion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_PaginaPrincipal);
+                navController.navigate(R.id.action_MiPerfil);
             }
         })
         ;

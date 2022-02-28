@@ -1,0 +1,272 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/blue">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background">
+
+            <ImageView
+                android:id="@+id/hamburguer_menu"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/hamburger_blanco"
+                android:backgroundTint="@color/trasparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/cine"
+                app:layout_constraintBottom_toTopOf="@id/tabMenu"/>
+
+            <LinearLayout
+                android:id="@+id/cine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/hamburguer_menu"
+                app:layout_constraintRight_toLeftOf="@id/botonPerfil">
+
+                        <ImageView
+                            android:id="@+id/estrella"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/estrella"
+                            android:layout_gravity="center"/>
+
+                        <Button
+                            android:id="@+id/botonTuCine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/trasparent"
+                            android:text="La Maquinista"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toRightOf="@id/estrella"/>
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/botonPerfil"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/trasparent"
+                android:src="@drawable/foto_perfil"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/cine"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/tabMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/hamburguer_menu"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/searchMenu"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/botonCartelera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cartelera"
+                    android:textSize="12dp"
+                    android:backgroundTint="@color/trasparent"/>
+
+                <Button
+                    android:id="@+id/botonEstrenos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estrenos"
+                    android:textSize="12dp"
+                    android:backgroundTint="@color/trasparent"/>
+
+                <Button
+                    android:id="@+id/botonPróximos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Próximos"
+                    android:textSize="12dp"
+                    android:backgroundTint="@color/trasparent"/>
+
+                <Button
+                    android:id="@+id/botonEventos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Eventos"
+                    android:textSize="12dp"
+                    android:backgroundTint="@color/trasparent"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/searchMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tabMenu"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Busca tu pelicula"
+                    android:textColor="@color/white"
+                    android:textSize="12dp"
+                    android:textColorHint="@color/white"/>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <ScrollView
+        android:id="@+id/scrollable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/menu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+
+            <ImageButton
+                android:id="@+id/peli1"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/peli1"
+                android:src="@drawable/peli1"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli2"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/peli1"
+                android:src="@drawable/peli2"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli3"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:src="@drawable/peli3"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli4"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli2"
+                app:layout_constraintLeft_toRightOf="@id/peli3"
+                android:src="@drawable/peli4"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli5"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:src="@drawable/peli5"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli6"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli4"
+                app:layout_constraintLeft_toRightOf="@id/peli5"
+                android:src="@drawable/peli6"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli7"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli5"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:src="@drawable/peli7"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli8"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli6"
+                app:layout_constraintLeft_toRightOf="@id/peli7"
+                android:src="@drawable/peli8"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli9"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli7"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:src="@drawable/peli9"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli10"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli8"
+                app:layout_constraintLeft_toRightOf="@id/peli9"
+                android:src="@drawable/peli10"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli11"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli10"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:src="@drawable/peli11"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/peli12"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                app:layout_constraintTop_toBottomOf="@id/peli10"
+                app:layout_constraintLeft_toRightOf="@id/peli11"
+                android:src="@drawable/peli12"
+                android:background="@color/trasparent"/>
+
+            <ImageButton
+                android:id="@+id/vacio"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                app:layout_constraintTop_toBottomOf="@id/peli11"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:backgroundTint="@color/trasparent"
+                android:background="@color/trasparent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

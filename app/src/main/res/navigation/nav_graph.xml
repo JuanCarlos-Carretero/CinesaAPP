@@ -48,6 +48,16 @@
         android:name="com.example.cinesaapp.Registro2Fragment"
         android:label="fragment_registro2"
         tools:layout="@layout/fragment_registro2" />
+    <fragment
+        android:id="@+id/paginaPrincipalFragment"
+        android:name="com.example.cinesaapp.PaginaPrincipalFragment"
+        android:label="fragment_pagina_principal"
+        tools:layout="@layout/fragment_pagina_principal" />
+    <fragment
+        android:id="@+id/perfilResumenFragment"
+        android:name="com.example.cinesaapp.PerfilResumenFragment"
+        android:label="fragment_perfil_resumen"
+        tools:layout="@layout/fragment_perfil_resumen" />
 
     <action
         android:id="@+id/action_inicio"
@@ -70,4 +80,10 @@
     <action
         android:id="@+id/action_registrarse2"
         app:destination="@id/registro2Fragment"/>
+    <action
+        android:id="@+id/action_PaginaPrincipal"
+        app:destination="@id/paginaPrincipalFragment"/>
+    <action
+        android:id="@+id/action_MiPerfil"
+        app:destination="@id/perfilResumenFragment"/>
 </navigation>

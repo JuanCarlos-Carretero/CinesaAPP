@@ -1,0 +1,206 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/hamburguerMenu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/hamburger_blanco"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/MiPerfil"/>
+
+    <TextView
+        android:id="@+id/MiPerfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mi Perfil"
+        android:textSize="24dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/hamburguerMenu"
+        app:layout_constraintRight_toLeftOf="@id/vacio"
+        app:layout_constraintBottom_toTopOf="@id/tabMenu"/>
+
+    <ImageView
+        android:id="@+id/vacio"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/MiPerfil"/>
+
+    <LinearLayout
+        android:id="@+id/tabMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/hamburguerMenu">
+
+        <Button
+            android:id="@+id/botonResumen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Resumen"
+            android:textSize="12dp"
+            android:backgroundTint="@color/trasparent"/>
+        <Button
+            android:id="@+id/botonEntradas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Entradas"
+            android:textSize="12dp"
+            android:backgroundTint="@color/trasparent"/>
+        <Button
+            android:id="@+id/botonCinesaCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CinesaCard"
+            android:textSize="12dp"
+            android:backgroundTint="@color/trasparent"/>
+        <Button
+            android:id="@+id/botonDatos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Datos"
+            android:textSize="12dp"
+            android:backgroundTint="@color/trasparent"/>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/fotoPerfil"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/foto_perfil"
+        app:layout_constraintTop_toBottomOf="@id/tabMenu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/nombreUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Juan Carlos Carretero Roldán"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/fotoPerfil"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/gradoUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cinéfilo"
+        android:textSize="15dp"
+        android:textColor="@color/yellow"
+        app:layout_constraintTop_toBottomOf="@id/nombreUsuario"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/tusEntradas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tus entradas"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gradoUsuario"/>
+
+    <TextView
+        android:id="@+id/entrada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ETERNALS"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tusEntradas"/>
+
+    <TextView
+        android:id="@+id/cine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CC LA MAQUINISTA"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/entrada"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="06 Nov 2021"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/entrada"/>
+
+    <TextView
+        android:id="@+id/CinesaCardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mi CinesaCard"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cine"/>
+
+    <TextView
+        android:id="@+id/numeroCinesaCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nº Cinesacard"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CinesaCardText"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C2898756"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CinesaCardText"/>
+
+    <TextView
+        android:id="@+id/saldoActual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saldo actual"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numeroCinesaCard"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="110 puntos"
+        android:textSize="15dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/numeroCinesaCard"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pide aquí ti Cinesacard física"
+        android:textColor="@color/blue"
+        android:backgroundTint="@color/yellow"
+        app:layout_constraintTop_toBottomOf="@id/saldoActual"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
