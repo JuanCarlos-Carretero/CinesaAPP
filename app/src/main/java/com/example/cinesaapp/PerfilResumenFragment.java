@@ -2,63 +2,145 @@ package com.example.cinesaapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PerfilResumenFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PerfilResumenFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    NavController navController;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    ImageView botonMenu;
+    ImageView fotoPerfil;
 
-    public PerfilResumenFragment() {
-        // Required empty public constructor
-    }
+    FrameLayout overlayMenu;
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment PerfilResumenFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static PerfilResumenFragment newInstance(String param1, String param2) {
-        PerfilResumenFragment fragment = new PerfilResumenFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    ImageButton botonCerrar;
+    ImageButton botonLogOut;
+    ImageButton botonPeliculas;
+    ImageButton botonPromociones;
+    ImageButton botonSalasPremium;
+    ImageButton botonb2b;
+    ImageButton botonCineLuxe;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    boolean clicado = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_perfil_resumen, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
+
+        overlayMenu = view.findViewById(R.id.overlayMenu);
+        overlayMenu.setVisibility(View.GONE);
+
+        botonMenu = view.findViewById(R.id.botonHamburguerMenu);
+        botonMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!clicado){
+                    overlayMenu.setVisibility(View.GONE);
+                    clicado = true;
+                }else{
+                    overlayMenu.setVisibility(View.VISIBLE);
+                    clicado = false;
+                }
+            }
+        });
+
+        botonCerrar = view.findViewById(R.id.botonCerrar);
+        botonCerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+            }
+        });
+
+        botonLogOut = view.findViewById(R.id.botonLogOut);
+        botonLogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_inicio);
+            }
+        });
+
+        fotoPerfil = view.findViewById(R.id.fotoPerfil);
+        fotoPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_MiPerfil);
+            }
+        });
+
+        botonPeliculas = view.findViewById(R.id.botonPeliculas);
+        botonPeliculas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_PaginaPrincipal);
+            }
+        });
+
+        botonPromociones = view.findViewById(R.id.botonPromociones);
+        botonPromociones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_paginaIndisponible);
+            }
+        });
+
+        botonSalasPremium = view.findViewById(R.id.botonSalasPremium);
+        botonSalasPremium.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_paginaIndisponible);
+            }
+        });
+
+        botonb2b = view.findViewById(R.id.botonBussines);
+        botonb2b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_paginaIndisponible);
+            }
+        });
+
+        botonCineLuxe = view.findViewById(R.id.botonCinesaLuxe);
+        botonCineLuxe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_paginaIndisponible);
+            }
+        });
+
     }
 }

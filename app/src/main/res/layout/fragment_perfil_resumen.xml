@@ -4,203 +4,411 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/background">
 
-    <ImageView
-        android:id="@+id/hamburguerMenu"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/hamburger_blanco"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/MiPerfil"/>
-
-    <TextView
-        android:id="@+id/MiPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mi Perfil"
-        android:textSize="24dp"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/hamburguerMenu"
-        app:layout_constraintRight_toLeftOf="@id/vacio"
-        app:layout_constraintBottom_toTopOf="@id/tabMenu"/>
-
-    <ImageView
-        android:id="@+id/vacio"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/MiPerfil"/>
-
-    <LinearLayout
-        android:id="@+id/tabMenu"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/hamburguerMenu">
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/botonHamburguerMenu"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/hamburger_blanco"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/MiPerfil"/>
 
-        <Button
-            android:id="@+id/botonResumen"
+        <TextView
+            android:id="@+id/MiPerfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resumen"
-            android:textSize="12dp"
-            android:backgroundTint="@color/trasparent"/>
-        <Button
-            android:id="@+id/botonEntradas"
+            android:text="Mi Perfil"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/botonHamburguerMenu"
+            app:layout_constraintRight_toLeftOf="@id/vacio"
+            app:layout_constraintBottom_toTopOf="@id/tabMenu"/>
+
+        <ImageView
+            android:id="@+id/vacio"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/MiPerfil"/>
+
+        <LinearLayout
+            android:id="@+id/tabMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/botonHamburguerMenu">
+
+            <Button
+                android:id="@+id/botonResumen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Resumen"
+                android:textSize="12dp"
+                android:backgroundTint="@color/trasparent"/>
+            <Button
+                android:id="@+id/botonEntradas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entradas"
+                android:textSize="12dp"
+                android:backgroundTint="@color/trasparent"/>
+            <Button
+                android:id="@+id/botonCinesaCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CinesaCard"
+                android:textSize="12dp"
+                android:backgroundTint="@color/trasparent"/>
+            <Button
+                android:id="@+id/botonDatos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Datos"
+                android:textSize="12dp"
+                android:backgroundTint="@color/trasparent"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/fotoPerfil"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/foto_perfil"
+            app:layout_constraintTop_toBottomOf="@id/tabMenu"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/nombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Entradas"
-            android:textSize="12dp"
-            android:backgroundTint="@color/trasparent"/>
-        <Button
-            android:id="@+id/botonCinesaCard"
+            android:text="Juan Carlos Carretero Roldán"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/fotoPerfil"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/gradoUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CinesaCard"
-            android:textSize="12dp"
-            android:backgroundTint="@color/trasparent"/>
-        <Button
-            android:id="@+id/botonDatos"
+            android:text="Cinéfilo"
+            android:textSize="15dp"
+            android:textColor="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/nombreUsuario"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/tusEntradas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Datos"
-            android:textSize="12dp"
-            android:backgroundTint="@color/trasparent"/>
-    </LinearLayout>
+            android:text="Tus entradas"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/gradoUsuario"/>
 
-    <ImageView
-        android:id="@+id/fotoPerfil"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:src="@drawable/foto_perfil"
-        app:layout_constraintTop_toBottomOf="@id/tabMenu"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/entrada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ETERNALS"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tusEntradas"/>
 
-    <TextView
-        android:id="@+id/nombreUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Juan Carlos Carretero Roldán"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@id/fotoPerfil"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:id="@+id/cine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CC LA MAQUINISTA"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/entrada"/>
 
-    <TextView
-        android:id="@+id/gradoUsuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cinéfilo"
-        android:textSize="15dp"
-        android:textColor="@color/yellow"
-        app:layout_constraintTop_toBottomOf="@id/nombreUsuario"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="06 Nov 2021"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/entrada"/>
 
-    <TextView
-        android:id="@+id/tusEntradas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tus entradas"
-        android:textSize="15dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gradoUsuario"/>
+        <TextView
+            android:id="@+id/CinesaCardText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mi CinesaCard"
+            android:textColor="@color/white"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cine"/>
 
-    <TextView
-        android:id="@+id/entrada"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ETERNALS"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tusEntradas"/>
+        <TextView
+            android:id="@+id/numeroCinesaCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nº Cinesacard"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/CinesaCardText"/>
 
-    <TextView
-        android:id="@+id/cine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CC LA MAQUINISTA"
-        android:textSize="15dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/entrada"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C2898756"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/CinesaCardText"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="06 Nov 2021"
-        android:textSize="15dp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/entrada"/>
+        <TextView
+            android:id="@+id/saldoActual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo actual"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/numeroCinesaCard"/>
 
-    <TextView
-        android:id="@+id/CinesaCardText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Mi CinesaCard"
-        android:textColor="@color/white"
-        android:layout_marginTop="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cine"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="110 puntos"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/numeroCinesaCard"/>
 
-    <TextView
-        android:id="@+id/numeroCinesaCard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nº Cinesacard"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CinesaCardText"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pide aquí tu Cinesacard física"
+            android:textColor="@color/blue"
+            android:backgroundTint="@color/yellow"
+            app:layout_constraintTop_toBottomOf="@id/saldoActual"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="C2898756"
-        android:textSize="20dp"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CinesaCardText"/>
+    <FrameLayout
+        android:id="@+id/overlayMenu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/saldoActual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Saldo actual"
-        android:textSize="15dp"
-        android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/numeroCinesaCard"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/opaco">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="110 puntos"
-        android:textSize="15dp"
-        android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/numeroCinesaCard"/>
+            <ImageButton
+                android:id="@+id/botonCerrar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/x"
+                android:backgroundTint="@color/trasparent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pide aquí ti Cinesacard física"
-        android:textColor="@color/blue"
-        android:backgroundTint="@color/yellow"
-        app:layout_constraintTop_toBottomOf="@id/saldoActual"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+            <ImageButton
+                android:id="@+id/botonLogOut"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logout"
+                android:backgroundTint="@color/trasparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+            <ImageView
+                android:id="@+id/hamburguerFotoPerfil"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/foto_perfil"
+                app:layout_constraintTop_toBottomOf="@id/botonCerrar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/hamburguerNombreUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Juan Carlos Carretero Roldán"
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerFotoPerfil"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/hamburguerGradoUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cinéfilo"
+                android:textSize="15dp"
+                android:textColor="@color/yellow"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerNombreUsuario"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <!--1 Linea de botones-->
+            <LinearLayout
+                android:id="@+id/hamburguerPeliculas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerGradoUsuario"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/hamburguerPromociones"
+                app:layout_constraintBottom_toTopOf="@id/hamburguerCines"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/botonPeliculas"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/iconmovie"
+                    android:backgroundTint="@color/trasparent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Películas"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hamburguerPromociones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerGradoUsuario"
+                app:layout_constraintLeft_toRightOf="@id/hamburguerPeliculas"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/hamburguerSalasPremium"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/botonPromociones"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/iconetiqueta"
+                    android:backgroundTint="@color/trasparent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Promociones"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <!--2 Linea de botones-->
+            <LinearLayout
+                android:id="@+id/hamburguerCines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerPeliculas"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/hamburguerSalasPremium"
+                app:layout_constraintBottom_toTopOf="@id/hamburguerBussines"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/botonCines"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/iconcine"
+                    android:backgroundTint="@color/trasparent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cines"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hamburguerSalasPremium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerPromociones"
+                app:layout_constraintLeft_toRightOf="@id/hamburguerCines"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/hamburguerCinesaLuxe"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/botonSalasPremium"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/iconcrown"
+                    android:backgroundTint="@color/trasparent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Salas Premium"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <!--3 Linea de botones-->
+            <LinearLayout
+                android:id="@+id/hamburguerBussines"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerCines"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/hamburguerSalasPremium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/botonBussines"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/bb"
+                    android:backgroundTint="@color/trasparent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bussines"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hamburguerCinesaLuxe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerSalasPremium"
+                app:layout_constraintLeft_toRightOf="@id/hamburguerCines"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton
+                    android:id="@+id/botonCinesaLuxe"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/cineluxe"
+                    android:backgroundTint="@color/trasparent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cinesa Luxe"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

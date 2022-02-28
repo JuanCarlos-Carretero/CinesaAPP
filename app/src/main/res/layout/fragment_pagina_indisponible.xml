@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".PaginaIndisponibleFragment"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/cinesalogo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/paginaIndisponible"/>
+
+            <TextView
+                android:id="@+id/paginaIndisponible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pagina indisponible"
+                android:textSize="25dp"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/logo"
+                app:layout_constraintBottom_toTopOf="@id/texto"/>
+
+            <TextView
+                android:id="@+id/texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estamos teniendo ciertos poblemas tecnicos esperamos poder resolverlos lo antes posible perdonen las molestias. Espere unos instantes estamos redireccionandole a la pagina principal."
+                android:textSize="20dp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/paginaIndisponible"/>
+            <ImageView
+                android:id="@+id/caraTriste"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/caratriste"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/texto"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -58,6 +58,11 @@
         android:name="com.example.cinesaapp.PerfilResumenFragment"
         android:label="fragment_perfil_resumen"
         tools:layout="@layout/fragment_perfil_resumen" />
+    <fragment
+        android:id="@+id/paginaIndisponibleFragment"
+        android:name="com.example.cinesaapp.PaginaIndisponibleFragment"
+        android:label="fragment_pagina_indisponible"
+        tools:layout="@layout/fragment_pagina_indisponible" />
 
     <action
         android:id="@+id/action_inicio"
@@ -86,4 +91,7 @@
     <action
         android:id="@+id/action_MiPerfil"
         app:destination="@id/perfilResumenFragment"/>
+    <action
+        android:id="@+id/action_paginaIndisponible"
+        app:destination="@id/paginaIndisponibleFragment"/>
 </navigation>
