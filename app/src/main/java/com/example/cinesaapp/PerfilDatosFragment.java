@@ -16,7 +16,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class PerfilResumenFragment extends Fragment {
+
+public class PerfilDatosFragment extends Fragment {
 
     NavController navController;
 
@@ -24,15 +25,12 @@ public class PerfilResumenFragment extends Fragment {
     ImageView fotoPerfil;
 
     FrameLayout overlayMenu;
-    FrameLayout overlayCinesaCard;
 
     Button botonEntradas;
     Button botonCinesaCard;
-    Button botonDatos;
+    Button botonResumen;
+    Button botonCerrarSesion;
 
-    Button pedirCinesaCard;
-
-    ImageButton cinesaCardCerrar;
     ImageButton botonCerrar;
     ImageButton botonLogOut;
     ImageButton botonPeliculas;
@@ -43,13 +41,12 @@ public class PerfilResumenFragment extends Fragment {
     ImageButton botonCineLuxe;
 
     boolean clicado = true;
-    boolean clicadoCinesaCard = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil_resumen, container, false);
+        return inflater.inflate(R.layout.fragment_perfil_datos, container, false);
     }
 
     @Override
@@ -59,24 +56,6 @@ public class PerfilResumenFragment extends Fragment {
 
         overlayMenu = view.findViewById(R.id.overlayMenu);
         overlayMenu.setVisibility(View.GONE);
-        overlayCinesaCard = view.findViewById(R.id.overlayCinesaCard);
-        overlayCinesaCard.setVisibility(View.GONE);
-
-        pedirCinesaCard = view.findViewById(R.id.pedirCinesaCard);
-        pedirCinesaCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (clicado) {
-                    if (!clicadoCinesaCard) {
-                        overlayCinesaCard.setVisibility(View.GONE);
-                        clicadoCinesaCard = true;
-                    } else {
-                        overlayCinesaCard.setVisibility(View.VISIBLE);
-                        clicadoCinesaCard = false;
-                    }
-                }
-            }
-        });
 
         botonMenu = view.findViewById(R.id.botonHamburguerMenu);
         botonMenu.setOnClickListener(new View.OnClickListener() {
@@ -89,15 +68,6 @@ public class PerfilResumenFragment extends Fragment {
                     overlayMenu.setVisibility(View.VISIBLE);
                     clicado = false;
                 }
-            }
-        });
-
-        cinesaCardCerrar = view.findViewById(R.id.botonCerrarCinesaCard);
-        cinesaCardCerrar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                overlayCinesaCard.setVisibility(View.GONE);
-                clicadoCinesaCard = true;
             }
         });
 
@@ -117,16 +87,6 @@ public class PerfilResumenFragment extends Fragment {
                 overlayMenu.setVisibility(View.GONE);
                 clicado = true;
                 navController.navigate(R.id.action_inicio);
-            }
-        });
-
-        fotoPerfil = view.findViewById(R.id.fotoPerfil);
-        fotoPerfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                overlayMenu.setVisibility(View.GONE);
-                clicado = true;
-                navController.navigate(R.id.action_MiPerfil);
             }
         });
 
@@ -207,13 +167,20 @@ public class PerfilResumenFragment extends Fragment {
             }
         });
 
-        botonDatos = view.findViewById(R.id.botonDatos);
-        botonDatos.setOnClickListener(new View.OnClickListener() {
+        botonResumen = view.findViewById(R.id.botonResumen);
+        botonResumen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_perfilDatos);
+                navController.navigate(R.id.action_MiPerfil);
             }
         });
 
+        botonCerrarSesion = view.findViewById(R.id.cerrarSesion);
+        botonCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_inicio);
+            }
+        });
     }
 }

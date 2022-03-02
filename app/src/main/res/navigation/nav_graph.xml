@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-             xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment2">
@@ -9,20 +9,17 @@
         android:id="@+id/homeFragment2"
         android:name="com.example.cinesaapp.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-    </fragment>
+        tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/inicioFragment2"
         android:name="com.example.cinesaapp.InicioFragment"
         android:label="fragment_inicio"
-        tools:layout="@layout/fragment_inicio" >
-    </fragment>
+        tools:layout="@layout/fragment_inicio"/>
     <fragment
         android:id="@+id/inicioSesionFragment2"
         android:name="com.example.cinesaapp.InicioSesionFragment"
         android:label="fragment_inicio_sesion"
-        tools:layout="@layout/fragment_inicio_sesion" >
-    </fragment>
+        tools:layout="@layout/fragment_inicio_sesion"/>
     <fragment
         android:id="@+id/recordarContrasenaFragment"
         android:name="com.example.cinesaapp.RecordarContrasenaFragment"
@@ -63,6 +60,31 @@
         android:name="com.example.cinesaapp.PaginaIndisponibleFragment"
         android:label="fragment_pagina_indisponible"
         tools:layout="@layout/fragment_pagina_indisponible" />
+    <fragment
+        android:id="@+id/cinesFragment"
+        android:name="com.example.cinesaapp.CinesFragment"
+        android:label="fragment_cines"
+        tools:layout="@layout/fragment_cines" />
+    <fragment
+        android:id="@+id/QRCodeFragment"
+        android:name="com.example.cinesaapp.QRCodeFragment"
+        android:label="fragment_q_r_code"
+        tools:layout="@layout/fragment_q_r_code" />
+    <fragment
+        android:id="@+id/perfilEntradasFragment"
+        android:name="com.example.cinesaapp.PerfilEntradasFragment"
+        android:label="fragment_perfil_entradas"
+        tools:layout="@layout/fragment_perfil_entradas" />
+    <fragment
+        android:id="@+id/perfilCinesaCardFragment"
+        android:name="com.example.cinesaapp.PerfilCinesaCardFragment"
+        android:label="fragment_perfil_cinesa_card"
+        tools:layout="@layout/fragment_perfil_cinesa_card" />
+    <fragment
+        android:id="@+id/perfilDatosFragment"
+        android:name="com.example.cinesaapp.PerfilDatosFragment"
+        android:label="fragment_perfil_mis_datos"
+        tools:layout="@layout/fragment_perfil_datos" />
 
     <action
         android:id="@+id/action_inicio"
@@ -75,23 +97,38 @@
         app:destination="@id/inicioSesionFragment2" />
     <action
         android:id="@+id/action_recordarContrasena2"
-        app:destination="@+id/recordarContrasena2Fragment"/>
+        app:destination="@+id/recordarContrasena2Fragment" />
     <action
         android:id="@+id/action_inicioSesionFacebook"
         app:destination="@id/inicioSesionFacebookFragment" />
     <action
         android:id="@+id/action_registrarse"
-        app:destination="@+id/registroFragment"/>
+        app:destination="@+id/registroFragment" />
     <action
         android:id="@+id/action_registrarse2"
-        app:destination="@id/registro2Fragment"/>
+        app:destination="@id/registro2Fragment" />
     <action
         android:id="@+id/action_PaginaPrincipal"
-        app:destination="@id/paginaPrincipalFragment"/>
-    <action
-        android:id="@+id/action_MiPerfil"
-        app:destination="@id/perfilResumenFragment"/>
+        app:destination="@id/paginaPrincipalFragment" />
     <action
         android:id="@+id/action_paginaIndisponible"
-        app:destination="@id/paginaIndisponibleFragment"/>
+        app:destination="@id/paginaIndisponibleFragment" />
+    <action
+        android:id="@+id/action_cines"
+        app:destination="@id/cinesFragment" />
+    <action
+        android:id="@+id/action_MiPerfil"
+        app:destination="@id/perfilResumenFragment" />
+    <action
+        android:id="@+id/action_perfilEntradas"
+        app:destination="@id/perfilEntradasFragment" />
+    <action
+        android:id="@+id/action_qrCode"
+        app:destination="@id/QRCodeFragment" />
+    <action
+        android:id="@+id/action_perfilCinesaCard"
+        app:destination="@id/perfilCinesaCardFragment"/>
+    <action
+        android:id="@+id/action_perfilDatos"
+        app:destination="@id/perfilDatosFragment"/>
 </navigation>

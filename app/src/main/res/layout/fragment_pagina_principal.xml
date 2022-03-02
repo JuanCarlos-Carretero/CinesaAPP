@@ -7,7 +7,7 @@
     android:background="@drawable/background">
 
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,10 +19,12 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/background">
+            android:background="@drawable/background"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
-                android:id="@+id/hamburguer_menu"
+                android:id="@+id/botonHamburguerMenu"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/hamburger_blanco"
@@ -37,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/hamburguer_menu"
+                app:layout_constraintLeft_toRightOf="@id/botonHamburguerMenu"
                 app:layout_constraintRight_toLeftOf="@id/botonPerfil">
 
                         <ImageView
@@ -48,7 +50,7 @@
                             android:layout_gravity="center"/>
 
                         <Button
-                            android:id="@+id/botonTuCine"
+                            android:id="@+id/botonCine"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:backgroundTint="@color/trasparent"
@@ -68,22 +70,22 @@
                 app:layout_constraintLeft_toRightOf="@id/cine"
                 app:layout_constraintRight_toRightOf="parent"/>
 
-            <LinearLayout
+            <com.google.android.flexbox.FlexboxLayout
                 android:id="@+id/tabMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hamburguer_menu"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/searchMenu"
-                android:orientation="horizontal">
+                app:flexWrap="wrap"
+                app:alignItems="center"
+                app:alignContent="center"
+                app:layout_constraintTop_toBottomOf="@id/botonHamburguerMenu"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <Button
                     android:id="@+id/botonCartelera"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cartelera"
-                    android:textSize="12dp"
+                    android:textSize="11sp"
                     android:backgroundTint="@color/trasparent"/>
 
                 <Button
@@ -91,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Estrenos"
-                    android:textSize="12dp"
+                    android:textSize="11sp"
                     android:backgroundTint="@color/trasparent"/>
 
                 <Button
@@ -99,7 +101,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Próximos"
-                    android:textSize="12dp"
+                    android:textSize="11sp"
                     android:backgroundTint="@color/trasparent"/>
 
                 <Button
@@ -107,10 +109,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Eventos"
-                    android:textSize="12dp"
+                    android:textSize="11sp"
                     android:backgroundTint="@color/trasparent"/>
 
-            </LinearLayout>
+            </com.google.android.flexbox.FlexboxLayout>
 
             <LinearLayout
                 android:id="@+id/searchMenu"
@@ -134,221 +136,213 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:id="@+id/scrollable"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/menu"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp">
+    <com.google.android.flexbox.FlexboxLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"
+        app:alignItems="center"
+        app:alignContent="center">
 
-            <ImageButton
-                android:id="@+id/peli1"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/peli1"
-                android:src="@drawable/peli1"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli1"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli1"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli2"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/peli1"
-                android:src="@drawable/peli2"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli2"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli2"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli3"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli1"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:src="@drawable/peli3"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli3"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli3"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli4"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli2"
-                app:layout_constraintLeft_toRightOf="@id/peli3"
-                android:src="@drawable/peli4"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli4"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli4"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli5"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli3"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:src="@drawable/peli5"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli5"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli5"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli6"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli4"
-                app:layout_constraintLeft_toRightOf="@id/peli5"
-                android:src="@drawable/peli6"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli6"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli6"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli7"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli5"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:src="@drawable/peli7"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli7"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli7"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli8"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli6"
-                app:layout_constraintLeft_toRightOf="@id/peli7"
-                android:src="@drawable/peli8"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli8"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli8"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli9"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli7"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:src="@drawable/peli9"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli9"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli9"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli10"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli8"
-                app:layout_constraintLeft_toRightOf="@id/peli9"
-                android:src="@drawable/peli10"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli10"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli10"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli11"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli10"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:src="@drawable/peli11"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli11"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli11"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/peli12"
-                android:layout_width="160dp"
-                android:layout_height="230dp"
-                app:layout_constraintTop_toBottomOf="@id/peli10"
-                app:layout_constraintLeft_toRightOf="@id/peli11"
-                android:src="@drawable/peli12"
-                android:background="@color/trasparent"/>
+        <ImageButton
+            android:id="@+id/peli12"
+            android:layout_width="160dp"
+            android:layout_height="230dp"
+            android:src="@drawable/peli12"
+            android:background="@color/trasparent"
+            android:layout_margin="2dp"/>
 
-            <ImageButton
-                android:id="@+id/vacio"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                app:layout_constraintTop_toBottomOf="@id/peli11"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:backgroundTint="@color/trasparent"
-                android:background="@color/trasparent"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="200dp"
+            android:backgroundTint="@color/trasparent"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
 
     </ScrollView>
 
     <FrameLayout
+        android:id="@+id/overlayMenu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="fill_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/opaco">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/opaco">
+            android:layout_height="fill_parent">
 
             <ImageButton
                 android:id="@+id/botonCerrar"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/x"
                 android:backgroundTint="@color/trasparent"
+                android:src="@drawable/x"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/botonLogOut"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/logout"
                 android:backgroundTint="@color/trasparent"
+                android:src="@drawable/logout"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
+
             <ImageView
                 android:id="@+id/hamburguerFotoPerfil"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:src="@drawable/foto_perfil"
-                app:layout_constraintTop_toBottomOf="@id/botonCerrar"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/botonCerrar" />
 
             <TextView
                 android:id="@+id/hamburguerNombreUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Juan Carlos Carretero Roldán"
-                android:textSize="20dp"
                 android:textColor="@color/white"
-                app:layout_constraintTop_toBottomOf="@id/hamburguerFotoPerfil"
+                android:textSize="20dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerFotoPerfil" />
 
             <TextView
                 android:id="@+id/hamburguerGradoUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Cinéfilo"
-                android:textSize="15dp"
                 android:textColor="@color/yellow"
-                app:layout_constraintTop_toBottomOf="@id/hamburguerNombreUsuario"
+                android:textSize="15dp"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"/>
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hamburguerNombreUsuario" />
 
             <!--1 Linea de botones-->
             <LinearLayout
                 android:id="@+id/hamburguerPeliculas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hamburguerGradoUsuario"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/hamburguerCines"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/hamburguerPromociones"
-                app:layout_constraintBottom_toTopOf="@id/hamburguerCines"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:layout_constraintTop_toBottomOf="@id/hamburguerGradoUsuario">
+
                 <ImageButton
                     android:id="@+id/botonPeliculas"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    android:src="@drawable/iconmovie"
-                    android:backgroundTint="@color/trasparent"/>
+                    android:backgroundTint="@color/trasparent"
+                    android:src="@drawable/iconmovie" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Películas"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -356,23 +350,25 @@
                 android:id="@+id/hamburguerPromociones"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hamburguerGradoUsuario"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/hamburguerSalasPremium"
                 app:layout_constraintLeft_toRightOf="@id/hamburguerPeliculas"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/hamburguerSalasPremium"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:layout_constraintTop_toBottomOf="@id/hamburguerGradoUsuario">
+
                 <ImageButton
                     android:id="@+id/botonPromociones"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    android:src="@drawable/iconetiqueta"
-                    android:backgroundTint="@color/trasparent" />
+                    android:backgroundTint="@color/trasparent"
+                    android:src="@drawable/iconetiqueta" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Promociones"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <!--2 Linea de botones-->
@@ -380,23 +376,25 @@
                 android:id="@+id/hamburguerCines"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hamburguerPeliculas"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/hamburguerBussines"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/hamburguerSalasPremium"
-                app:layout_constraintBottom_toTopOf="@id/hamburguerBussines"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:layout_constraintTop_toBottomOf="@id/hamburguerPeliculas">
+
                 <ImageButton
                     android:id="@+id/botonCines"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    android:src="@drawable/iconcine"
-                    android:backgroundTint="@color/trasparent"/>
+                    android:backgroundTint="@color/trasparent"
+                    android:src="@drawable/iconcine" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cines"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -404,23 +402,25 @@
                 android:id="@+id/hamburguerSalasPremium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hamburguerPromociones"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/hamburguerCinesaLuxe"
                 app:layout_constraintLeft_toRightOf="@id/hamburguerCines"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/hamburguerCinesaLuxe"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:layout_constraintTop_toBottomOf="@id/hamburguerPromociones">
+
                 <ImageButton
                     android:id="@+id/botonSalasPremium"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    android:src="@drawable/iconcrown"
-                    android:backgroundTint="@color/trasparent" />
+                    android:backgroundTint="@color/trasparent"
+                    android:src="@drawable/iconcrown" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Salas Premium"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
             </LinearLayout>
 
             <!--3 Linea de botones-->
@@ -428,23 +428,25 @@
                 android:id="@+id/hamburguerBussines"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hamburguerCines"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@id/hamburguerSalasPremium"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:layout_constraintTop_toBottomOf="@id/hamburguerCines">
+
                 <ImageButton
                     android:id="@+id/botonBussines"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    android:src="@drawable/bb"
-                    android:backgroundTint="@color/trasparent"/>
+                    android:backgroundTint="@color/trasparent"
+                    android:src="@drawable/bb" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bussines"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
 
             </LinearLayout>
 
@@ -452,26 +454,29 @@
                 android:id="@+id/hamburguerCinesaLuxe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/hamburguerSalasPremium"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/hamburguerCines"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:orientation="vertical"
-                android:gravity="center">
+                app:layout_constraintTop_toBottomOf="@id/hamburguerSalasPremium">
+
                 <ImageButton
                     android:id="@+id/botonCinesaLuxe"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
-                    android:src="@drawable/cineluxe"
-                    android:backgroundTint="@color/trasparent" />
+                    android:backgroundTint="@color/trasparent"
+                    android:src="@drawable/cineluxe" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cinesa Luxe"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white" />
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

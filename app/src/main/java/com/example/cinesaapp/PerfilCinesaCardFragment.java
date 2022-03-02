@@ -16,18 +16,18 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-public class PerfilResumenFragment extends Fragment {
+public class PerfilCinesaCardFragment extends Fragment {
 
     NavController navController;
 
     ImageView botonMenu;
-    ImageView fotoPerfil;
 
     FrameLayout overlayMenu;
     FrameLayout overlayCinesaCard;
+    FrameLayout overlayQrCode;
 
     Button botonEntradas;
-    Button botonCinesaCard;
+    Button botonResumen;
     Button botonDatos;
 
     Button pedirCinesaCard;
@@ -41,17 +41,19 @@ public class PerfilResumenFragment extends Fragment {
     ImageButton botonSalasPremium;
     ImageButton botonb2b;
     ImageButton botonCineLuxe;
+    ImageButton cinesaCardQrCode;
+    ImageButton cerrarQrCode;
 
     boolean clicado = true;
     boolean clicadoCinesaCard = true;
+    boolean clicadoQrCode = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil_resumen, container, false);
+        return inflater.inflate(R.layout.fragment_perfil_cinesa_card, container, false);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -61,12 +63,39 @@ public class PerfilResumenFragment extends Fragment {
         overlayMenu.setVisibility(View.GONE);
         overlayCinesaCard = view.findViewById(R.id.overlayCinesaCard);
         overlayCinesaCard.setVisibility(View.GONE);
+        overlayQrCode = view.findViewById(R.id.overlayQrCode);
+        overlayQrCode.setVisibility(View.GONE);
+
+        cinesaCardQrCode = view.findViewById(R.id.cinesaCard);
+        cinesaCardQrCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (clicado && clicadoCinesaCard) {
+                    if (!clicadoQrCode) {
+                        overlayQrCode.setVisibility(View.GONE);
+                        clicadoQrCode = true;
+                    } else {
+                        overlayQrCode.setVisibility(View.VISIBLE);
+                        clicadoQrCode = false;
+                    }
+                }
+            }
+        });
+
+        cerrarQrCode = view.findViewById(R.id.cerrarQrCode);
+        cerrarQrCode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayQrCode.setVisibility(View.GONE);
+                clicadoQrCode = true;
+            }
+        });
 
         pedirCinesaCard = view.findViewById(R.id.pedirCinesaCard);
         pedirCinesaCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (clicado) {
+                if (clicado && clicadoQrCode) {
                     if (!clicadoCinesaCard) {
                         overlayCinesaCard.setVisibility(View.GONE);
                         clicadoCinesaCard = true;
@@ -117,16 +146,6 @@ public class PerfilResumenFragment extends Fragment {
                 overlayMenu.setVisibility(View.GONE);
                 clicado = true;
                 navController.navigate(R.id.action_inicio);
-            }
-        });
-
-        fotoPerfil = view.findViewById(R.id.fotoPerfil);
-        fotoPerfil.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                overlayMenu.setVisibility(View.GONE);
-                clicado = true;
-                navController.navigate(R.id.action_MiPerfil);
             }
         });
 
@@ -199,11 +218,11 @@ public class PerfilResumenFragment extends Fragment {
             }
         });
 
-        botonCinesaCard = view.findViewById(R.id.botonCinesaCard);
-        botonCinesaCard.setOnClickListener(new View.OnClickListener() {
+        botonResumen = view.findViewById(R.id.botonResumen);
+        botonResumen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_perfilCinesaCard);
+                navController.navigate(R.id.action_MiPerfil);
             }
         });
 
