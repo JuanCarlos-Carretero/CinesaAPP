@@ -42,21 +42,21 @@
                 app:layout_constraintLeft_toRightOf="@id/botonHamburguerMenu"
                 app:layout_constraintRight_toLeftOf="@id/botonPerfil">
 
-                        <ImageView
-                            android:id="@+id/estrella"
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:src="@drawable/estrella"
-                            android:layout_gravity="center"/>
+                <ImageView
+                    android:id="@+id/estrella"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/estrella"
+                    android:layout_gravity="center"/>
 
-                        <Button
-                            android:id="@+id/botonCine"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:backgroundTint="@color/trasparent"
-                            android:text="La Maquinista"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintLeft_toRightOf="@id/estrella"/>
+                <Button
+                    android:id="@+id/botonCine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/trasparent"
+                    android:text="La Maquinista"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/estrella"/>
             </LinearLayout>
 
             <ImageButton
@@ -146,115 +146,67 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
 
-    <com.google.android.flexbox.FlexboxLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:flexWrap="wrap"
-        app:alignItems="center"
-        app:alignContent="center">
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexWrap="wrap"
+            app:alignItems="center"
+            app:alignContent="center">
 
-        <ImageButton
-            android:id="@+id/peli1"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli1"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/peli1"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                android:src="@drawable/peli1"
+                android:background="@color/trasparent"
+                android:layout_margin="2dp"/>
 
-        <ImageButton
-            android:id="@+id/peli2"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli2"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/peli2"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                android:src="@drawable/peli2"
+                android:background="@color/trasparent"
+                android:layout_margin="2dp"/>
 
-        <ImageButton
-            android:id="@+id/peli3"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli3"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/peli3"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                android:src="@drawable/peli3"
+                android:background="@color/trasparent"
+                android:layout_margin="2dp"/>
 
-        <ImageButton
-            android:id="@+id/peli4"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli4"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/peli4"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                android:src="@drawable/peli4"
+                android:background="@color/trasparent"
+                android:layout_margin="2dp"/>
 
-        <ImageButton
-            android:id="@+id/peli5"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli5"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/peli5"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                android:src="@drawable/peli5"
+                android:background="@color/trasparent"
+                android:layout_margin="2dp"/>
 
-        <ImageButton
-            android:id="@+id/peli6"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli6"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
+            <ImageButton
+                android:id="@+id/peli6"
+                android:layout_width="160dp"
+                android:layout_height="230dp"
+                android:src="@drawable/peli6"
+                android:background="@color/trasparent"
+                android:layout_margin="2dp"/>
 
-        <ImageButton
-            android:id="@+id/peli7"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli7"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
+            <ImageView
+                android:layout_width="160dp"
+                android:layout_height="200dp"
+                android:backgroundTint="@color/trasparent"/>
 
-        <ImageButton
-            android:id="@+id/peli8"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli8"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
-
-        <ImageButton
-            android:id="@+id/peli9"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli9"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
-
-        <ImageButton
-            android:id="@+id/peli10"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli10"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
-
-        <ImageButton
-            android:id="@+id/peli11"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli11"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
-
-        <ImageButton
-            android:id="@+id/peli12"
-            android:layout_width="160dp"
-            android:layout_height="230dp"
-            android:src="@drawable/peli12"
-            android:background="@color/trasparent"
-            android:layout_margin="2dp"/>
-
-        <ImageView
-            android:layout_width="160dp"
-            android:layout_height="200dp"
-            android:backgroundTint="@color/trasparent"/>
-
-    </com.google.android.flexbox.FlexboxLayout>
+        </com.google.android.flexbox.FlexboxLayout>
 
     </ScrollView>
 

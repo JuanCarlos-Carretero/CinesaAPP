@@ -50,7 +50,6 @@ public class CinesFragment extends Fragment {
             googleMap.addMarker(new MarkerOptions().position(Parc_Valles).title("Cinesa Parc Valles"));
             googleMap.addMarker(new MarkerOptions().position(BarnaSud).title("Cinesa BarnaSud"));
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(La_Maquinista));
-
         }
     };
 

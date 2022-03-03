@@ -15,25 +15,22 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-public class PerfilCinesaCardFragment extends Fragment {
+public class ProximosFragment extends Fragment {
 
     NavController navController;
 
     ImageView botonMenu;
+    ImageView fotoPerfil;
 
     FrameLayout overlayMenu;
-    FrameLayout overlayCinesaCard;
-    FrameLayout overlayQrCode;
 
-    Button botonEntradas;
-    Button botonResumen;
-    Button botonDatos;
+    Button botonCine;
+    Button botonEstrenos;
+    Button botonCartelera;
+    Button botonEventos;
 
-    Button pedirCinesaCard;
-
-    ImageButton cinesaCardCerrar;
+    ImageButton botonPerfil;
     ImageButton botonCerrar;
     ImageButton botonLogOut;
     ImageButton botonPeliculas;
@@ -42,18 +39,14 @@ public class PerfilCinesaCardFragment extends Fragment {
     ImageButton botonSalasPremium;
     ImageButton botonb2b;
     ImageButton botonCineLuxe;
-    LinearLayout cinesaCardQrCode;
-    ImageButton cerrarQrCode;
 
     boolean clicado = true;
-    boolean clicadoCinesaCard = true;
-    boolean clicadoQrCode = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil_cinesa_card, container, false);
+        return inflater.inflate(R.layout.fragment_proximos, container, false);
     }
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -62,51 +55,6 @@ public class PerfilCinesaCardFragment extends Fragment {
 
         overlayMenu = view.findViewById(R.id.overlayMenu);
         overlayMenu.setVisibility(View.GONE);
-        overlayCinesaCard = view.findViewById(R.id.overlayCinesaCard);
-        overlayCinesaCard.setVisibility(View.GONE);
-        overlayQrCode = view.findViewById(R.id.overlayQrCode);
-        overlayQrCode.setVisibility(View.GONE);
-
-        cinesaCardQrCode = view.findViewById(R.id.cinesaCard);
-        cinesaCardQrCode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (clicado && clicadoCinesaCard) {
-                    if (!clicadoQrCode) {
-                        overlayQrCode.setVisibility(View.GONE);
-                        clicadoQrCode = true;
-                    } else {
-                        overlayQrCode.setVisibility(View.VISIBLE);
-                        clicadoQrCode = false;
-                    }
-                }
-            }
-        });
-
-        cerrarQrCode = view.findViewById(R.id.cerrarQrCode);
-        cerrarQrCode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                overlayQrCode.setVisibility(View.GONE);
-                clicadoQrCode = true;
-            }
-        });
-
-        pedirCinesaCard = view.findViewById(R.id.pedirCinesaCard);
-        pedirCinesaCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (clicado && clicadoQrCode) {
-                    if (!clicadoCinesaCard) {
-                        overlayCinesaCard.setVisibility(View.GONE);
-                        clicadoCinesaCard = true;
-                    } else {
-                        overlayCinesaCard.setVisibility(View.VISIBLE);
-                        clicadoCinesaCard = false;
-                    }
-                }
-            }
-        });
 
         botonMenu = view.findViewById(R.id.botonHamburguerMenu);
         botonMenu.setOnClickListener(new View.OnClickListener() {
@@ -122,12 +70,27 @@ public class PerfilCinesaCardFragment extends Fragment {
             }
         });
 
-        cinesaCardCerrar = view.findViewById(R.id.botonCerrarCinesaCard);
-        cinesaCardCerrar.setOnClickListener(new View.OnClickListener() {
+        botonEventos = view.findViewById(R.id.botonEventos);
+        botonEventos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                overlayCinesaCard.setVisibility(View.GONE);
-                clicadoCinesaCard = true;
+                navController.navigate(R.id.action_eventos);
+            }
+        });
+
+        botonCartelera = view.findViewById(R.id.botonCartelera);
+        botonCartelera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_PaginaPrincipal);
+            }
+        });
+
+        botonEstrenos = view.findViewById(R.id.botonEstrenos);
+        botonEstrenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_estrenos);
             }
         });
 
@@ -150,13 +113,13 @@ public class PerfilCinesaCardFragment extends Fragment {
             }
         });
 
-        botonCines = view.findViewById(R.id.botonCines);
-        botonCines.setOnClickListener(new View.OnClickListener() {
+        fotoPerfil = view.findViewById(R.id.hamburguerFotoPerfil);
+        fotoPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 overlayMenu.setVisibility(View.GONE);
                 clicado = true;
-                navController.navigate(R.id.action_cines);
+                navController.navigate(R.id.action_MiPerfil);
             }
         });
 
@@ -167,6 +130,16 @@ public class PerfilCinesaCardFragment extends Fragment {
                 overlayMenu.setVisibility(View.GONE);
                 clicado = true;
                 navController.navigate(R.id.action_PaginaPrincipal);
+            }
+        });
+
+        botonCines = view.findViewById(R.id.botonCines);
+        botonCines.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                overlayMenu.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_cines);
             }
         });
 
@@ -209,31 +182,24 @@ public class PerfilCinesaCardFragment extends Fragment {
                 navController.navigate(R.id.action_paginaIndisponible);
             }
         });
+        //Botones que no son del menuHamburguer
 
-        //Botones que no estan en el menu
-        botonEntradas = view.findViewById(R.id.botonEntradas);
-        botonEntradas.setOnClickListener(new View.OnClickListener() {
+        botonCine = view.findViewById(R.id.botonCine);
+        botonCine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.action_perfilEntradas);
+                navController.navigate(R.id.action_cines);
             }
-        });
+        })
+        ;
 
-        botonResumen = view.findViewById(R.id.botonResumen);
-        botonResumen.setOnClickListener(new View.OnClickListener() {
+        botonPerfil = view.findViewById(R.id.botonPerfil);
+        botonPerfil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_MiPerfil);
             }
-        });
-
-        botonDatos = view.findViewById(R.id.botonDatos);
-        botonDatos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navController.navigate(R.id.action_perfilDatos);
-            }
-        });
-
+        })
+        ;
     }
 }

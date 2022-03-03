@@ -15,6 +15,7 @@ package com.example.cinesaapp;
         import android.widget.FrameLayout;
         import android.widget.ImageButton;
         import android.widget.ImageView;
+        import android.widget.LinearLayout;
 
 public class PerfilEntradasFragment extends Fragment {
 
@@ -28,7 +29,7 @@ public class PerfilEntradasFragment extends Fragment {
     Button botonCinesaCard;
     Button botonDatos;
 
-    ImageButton entrada;
+    LinearLayout entrada;
     ImageButton botonCerrar;
     ImageButton botonLogOut;
     ImageButton botonPeliculas;

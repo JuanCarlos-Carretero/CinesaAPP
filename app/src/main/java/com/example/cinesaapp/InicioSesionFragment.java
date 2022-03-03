@@ -40,7 +40,7 @@ public class InicioSesionFragment extends Fragment {
         })
         ;
 
-        iniciarSesion = view.findViewById(R.id.button);
+        iniciarSesion = view.findViewById(R.id.siguiente);
         iniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

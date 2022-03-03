@@ -27,6 +27,9 @@ public class PaginaPrincipalFragment extends Fragment {
     FrameLayout overlayMenu;
 
     Button botonCine;
+    Button botonEstrenos;
+    Button botonProximos;
+    Button botonEventos;
 
     ImageButton botonPerfil;
     ImageButton botonCerrar;
@@ -37,6 +40,8 @@ public class PaginaPrincipalFragment extends Fragment {
     ImageButton botonSalasPremium;
     ImageButton botonb2b;
     ImageButton botonCineLuxe;
+
+    ImageButton peli1;
 
     boolean clicado = true;
 
@@ -66,6 +71,30 @@ public class PaginaPrincipalFragment extends Fragment {
                     overlayMenu.setVisibility(View.VISIBLE);
                     clicado = false;
                 }
+            }
+        });
+
+        botonEventos = view.findViewById(R.id.botonEventos);
+        botonEventos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_eventos);
+            }
+        });
+
+        botonProximos = view.findViewById(R.id.botonProximos);
+        botonProximos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_proximos);
+            }
+        });
+
+        botonEstrenos = view.findViewById(R.id.botonEstrenos);
+        botonEstrenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_estrenos);
             }
         });
 
@@ -176,5 +205,13 @@ public class PaginaPrincipalFragment extends Fragment {
             }
         })
         ;
+
+        peli1 = view.findViewById(R.id.peli1);
+        peli1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.action_peli1);
+            }
+        });
     }
 }

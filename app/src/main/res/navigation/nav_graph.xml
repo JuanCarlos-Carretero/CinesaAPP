@@ -85,50 +85,83 @@
         android:name="com.example.cinesaapp.PerfilDatosFragment"
         android:label="fragment_perfil_mis_datos"
         tools:layout="@layout/fragment_perfil_datos" />
+    <fragment
+        android:id="@+id/estrenosFragment"
+    android:name="com.example.cinesaapp.EstrenosFragment"
+    android:label="fragment_estrenos"
+    tools:layout="@layout/fragment_estrenos" />
+    <fragment
+        android:id="@+id/proximosFragment"
+        android:name="com.example.cinesaapp.ProximosFragment"
+        android:label="fragment_proximos"
+        tools:layout="@layout/fragment_proximos" />
+    <fragment
+        android:id="@+id/eventosFragment"
+        android:name="com.example.cinesaapp.EventosFragment"
+        android:label="fragment_eventos"
+        tools:layout="@layout/fragment_eventos" />
+    <fragment
+        android:id="@+id/peli1Fragment"
+        android:name="com.example.cinesaapp.peli1Fragment"
+        android:label="fragment_peli1"
+        tools:layout="@layout/fragment_peli1" />
 
     <action
-        android:id="@+id/action_inicio"
-        app:destination="@id/inicioFragment2" />
+    android:id="@+id/action_inicio"
+    app:destination="@id/inicioFragment2" />
     <action
-        android:id="@+id/action_recordarContrasena"
-        app:destination="@id/recordarContrasenaFragment" />
+    android:id="@+id/action_recordarContrasena"
+    app:destination="@id/recordarContrasenaFragment" />
     <action
-        android:id="@+id/action_inicioSesion"
-        app:destination="@id/inicioSesionFragment2" />
+    android:id="@+id/action_inicioSesion"
+    app:destination="@id/inicioSesionFragment2" />
     <action
-        android:id="@+id/action_recordarContrasena2"
-        app:destination="@+id/recordarContrasena2Fragment" />
+    android:id="@+id/action_recordarContrasena2"
+    app:destination="@+id/recordarContrasena2Fragment" />
     <action
-        android:id="@+id/action_inicioSesionFacebook"
-        app:destination="@id/inicioSesionFacebookFragment" />
+    android:id="@+id/action_inicioSesionFacebook"
+    app:destination="@id/inicioSesionFacebookFragment" />
     <action
-        android:id="@+id/action_registrarse"
-        app:destination="@+id/registroFragment" />
+    android:id="@+id/action_registrarse"
+    app:destination="@+id/registroFragment" />
     <action
-        android:id="@+id/action_registrarse2"
-        app:destination="@id/registro2Fragment" />
+    android:id="@+id/action_registrarse2"
+    app:destination="@id/registro2Fragment" />
     <action
-        android:id="@+id/action_PaginaPrincipal"
-        app:destination="@id/paginaPrincipalFragment" />
+    android:id="@+id/action_PaginaPrincipal"
+    app:destination="@id/paginaPrincipalFragment" />
     <action
-        android:id="@+id/action_paginaIndisponible"
-        app:destination="@id/paginaIndisponibleFragment" />
+    android:id="@+id/action_paginaIndisponible"
+    app:destination="@id/paginaIndisponibleFragment" />
     <action
-        android:id="@+id/action_cines"
-        app:destination="@id/cinesFragment" />
+    android:id="@+id/action_cines"
+    app:destination="@id/cinesFragment" />
     <action
-        android:id="@+id/action_MiPerfil"
-        app:destination="@id/perfilResumenFragment" />
+    android:id="@+id/action_MiPerfil"
+    app:destination="@id/perfilResumenFragment" />
     <action
-        android:id="@+id/action_perfilEntradas"
-        app:destination="@id/perfilEntradasFragment" />
+    android:id="@+id/action_perfilEntradas"
+    app:destination="@id/perfilEntradasFragment" />
     <action
-        android:id="@+id/action_qrCode"
-        app:destination="@id/QRCodeFragment" />
+    android:id="@+id/action_qrCode"
+    app:destination="@id/QRCodeFragment" />
     <action
-        android:id="@+id/action_perfilCinesaCard"
-        app:destination="@id/perfilCinesaCardFragment"/>
+    android:id="@+id/action_perfilCinesaCard"
+    app:destination="@id/perfilCinesaCardFragment"/>
     <action
-        android:id="@+id/action_perfilDatos"
-        app:destination="@id/perfilDatosFragment"/>
+    android:id="@+id/action_perfilDatos"
+    app:destination="@id/perfilDatosFragment"/>
+    <action
+    android:id="@+id/action_estrenos"
+    app:destination="@id/estrenosFragment"/>
+    <action
+        android:id="@+id/action_proximos"
+        app:destination="@id/proximosFragment"/>
+    <action
+        android:id="@+id/action_eventos"
+        app:destination="@id/eventosFragment"/>
+    <action
+        android:id="@+id/action_peli1"
+        app:destination="@id/peli1Fragment"/>
+
 </navigation>
