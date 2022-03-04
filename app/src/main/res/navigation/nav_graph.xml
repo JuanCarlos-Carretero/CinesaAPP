@@ -110,71 +110,114 @@
         android:name="com.example.cinesaapp.PaginaPagoFragment"
         android:label="fragment_pagina_pago"
         tools:layout="@layout/fragment_pagina_pago" />
-
-    <action
-    android:id="@+id/action_inicio"
-    app:destination="@id/inicioFragment2" />
-    <action
-    android:id="@+id/action_recordarContrasena"
-    app:destination="@id/recordarContrasenaFragment" />
-    <action
-    android:id="@+id/action_inicioSesion"
-    app:destination="@id/inicioSesionFragment2" />
-    <action
-    android:id="@+id/action_recordarContrasena2"
-    app:destination="@+id/recordarContrasena2Fragment" />
-    <action
-    android:id="@+id/action_inicioSesionFacebook"
-    app:destination="@id/inicioSesionFacebookFragment" />
-    <action
-    android:id="@+id/action_registrarse"
-    app:destination="@+id/registroFragment" />
-    <action
-    android:id="@+id/action_registrarse2"
-    app:destination="@id/registro2Fragment" />
-    <action
-    android:id="@+id/action_PaginaPrincipal"
-    app:destination="@id/paginaPrincipalFragment" />
-    <action
-    android:id="@+id/action_paginaIndisponible"
-    app:destination="@id/paginaIndisponibleFragment" />
-    <action
-    android:id="@+id/action_cines"
-    app:destination="@id/cinesFragment" />
-    <action
-    android:id="@+id/action_MiPerfil"
-    app:destination="@id/perfilResumenFragment" />
-    <action
-    android:id="@+id/action_perfilEntradas"
-    app:destination="@id/perfilEntradasFragment" />
-    <action
-    android:id="@+id/action_qrCode"
-    app:destination="@id/QRCodeFragment" />
-    <action
-    android:id="@+id/action_perfilCinesaCard"
-    app:destination="@id/perfilCinesaCardFragment"/>
-    <action
-    android:id="@+id/action_perfilDatos"
-    app:destination="@id/perfilDatosFragment"/>
-    <action
-    android:id="@+id/action_estrenos"
-    app:destination="@id/estrenosFragment"/>
-    <action
-        android:id="@+id/action_proximos"
-        app:destination="@id/proximosFragment"/>
-    <action
-        android:id="@+id/action_eventos"
-        app:destination="@id/eventosFragment"/>
-    <action
-        android:id="@+id/action_peli1"
-        app:destination="@id/peli1Fragment"/>
-    <action
-        android:id="@+id/action_paginaPago"
-        app:destination="@id/paginaPagoFragment"/>
     <fragment
         android:id="@+id/graciasFragment"
         android:name="com.example.cinesaapp.GraciasFragment"
         android:label="fragment_gracias"
         tools:layout="@layout/fragment_gracias" />
+
+    <action
+        android:id="@+id/action_inicio"
+        app:destination="@id/inicioFragment2"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_recordarContrasena"
+    app:destination="@id/recordarContrasenaFragment" />
+    <action
+        android:id="@+id/action_inicioSesion"
+        app:destination="@id/inicioSesionFragment2"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_recordarContrasena2"
+    app:destination="@+id/recordarContrasena2Fragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_inicioSesionFacebook"
+    app:destination="@id/inicioSesionFacebookFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_registrarse"
+    app:destination="@+id/registroFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_registrarse2"
+    app:destination="@id/registro2Fragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_PaginaPrincipal"
+    app:destination="@id/paginaPrincipalFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_paginaIndisponible"
+    app:destination="@id/paginaIndisponibleFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_cines"
+    app:destination="@id/cinesFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_MiPerfil"
+    app:destination="@id/perfilResumenFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_perfilEntradas"
+    app:destination="@id/perfilEntradasFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_qrCode"
+    app:destination="@id/QRCodeFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out" />
+    <action
+    android:id="@+id/action_perfilCinesaCard"
+    app:destination="@id/perfilCinesaCardFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <action
+    android:id="@+id/action_perfilDatos"
+    app:destination="@id/perfilDatosFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <action
+    android:id="@+id/action_estrenos"
+    app:destination="@id/estrenosFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <action
+        android:id="@+id/action_proximos"
+        app:destination="@id/proximosFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <action
+        android:id="@+id/action_eventos"
+        app:destination="@id/eventosFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <action
+        android:id="@+id/action_peli1"
+        app:destination="@id/peli1Fragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <action
+        android:id="@+id/action_paginaPago"
+        app:destination="@id/paginaPagoFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
+    <action
+        android:id="@+id/action_gracias"
+        app:destination="@id/graciasFragment"
+        app:enterAnim="@android:anim/fade_in"
+        app:exitAnim="@android:anim/fade_out"/>
 
 </navigation>

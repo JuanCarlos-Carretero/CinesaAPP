@@ -16,6 +16,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.pranavpandey.android.dynamic.toasts.DynamicToast;
+
 
 public class PerfilDatosFragment extends Fragment {
 
@@ -30,6 +32,8 @@ public class PerfilDatosFragment extends Fragment {
     Button botonCinesaCard;
     Button botonResumen;
     Button botonCerrarSesion;
+
+    Button avisoLegal, politicaDePrivacidad, politicaDeCookies, consentimientosComerciales;
 
     ImageButton botonCerrar;
     ImageButton botonLogOut;
@@ -180,6 +184,38 @@ public class PerfilDatosFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.action_inicio);
+            }
+        });
+
+        avisoLegal = view.findViewById(R.id.avisoLegal);
+        avisoLegal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DynamicToast.makeError(getContext(), "Error: No se ha podido abrir la pagina").show();
+            }
+        });
+
+        politicaDePrivacidad = view.findViewById(R.id.politicaDePrivacidad);
+        politicaDePrivacidad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DynamicToast.makeError(getContext(), "Error: No se ha podido abrir la pagina").show();
+            }
+        });
+
+        politicaDeCookies = view.findViewById(R.id.politicaDeCookies);
+        politicaDeCookies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DynamicToast.makeError(getContext(), "Error: No se ha podido abrir la pagina").show();
+            }
+        });
+
+        consentimientosComerciales = view.findViewById(R.id.consentimientosComerciales);
+        consentimientosComerciales.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DynamicToast.makeError(getContext(), "Error: No se ha podido abrir la pagina").show();
             }
         });
     }
