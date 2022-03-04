@@ -2,63 +2,87 @@ package com.example.cinesaapp;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link peli1Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class peli1Fragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    NavController navController;
+    FrameLayout elegirButaca;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    LinearLayout cine;
+    ImageButton botonX;
+    Button botonPasarPago;
+    ImageButton botonCerrar;
 
-    public peli1Fragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment peli1Fragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static peli1Fragment newInstance(String param1, String param2) {
-        peli1Fragment fragment = new peli1Fragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    boolean clicado = true;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_peli1, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
+
+        elegirButaca = view.findViewById(R.id.elegirButacas);
+        elegirButaca.setVisibility(View.GONE);
+
+        cine = view.findViewById(R.id.direccion);
+        cine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!clicado){
+                    elegirButaca.setVisibility(View.GONE);
+                    clicado = true;
+                }else{
+                    elegirButaca.setVisibility(View.VISIBLE);
+                    clicado = false;
+                }
+            }
+        });
+
+        botonCerrar = view.findViewById(R.id.botonCerrar);
+        botonCerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clicado = true;
+                navController.navigate(R.id.action_PaginaPrincipal);
+            }
+        });
+
+        botonX = view.findViewById(R.id.x);
+        botonX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                elegirButaca.setVisibility(View.GONE);
+                clicado = true;
+            }
+        });
+
+        botonPasarPago = view.findViewById(R.id.pasarPago);
+        botonPasarPago.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                elegirButaca.setVisibility(View.GONE);
+                clicado = true;
+                navController.navigate(R.id.action_paginaPago);
+            }
+        });
     }
 }

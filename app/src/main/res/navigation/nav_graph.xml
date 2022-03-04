@@ -105,6 +105,11 @@
         android:name="com.example.cinesaapp.peli1Fragment"
         android:label="fragment_peli1"
         tools:layout="@layout/fragment_peli1" />
+    <fragment
+        android:id="@+id/paginaPagoFragment"
+        android:name="com.example.cinesaapp.PaginaPagoFragment"
+        android:label="fragment_pagina_pago"
+        tools:layout="@layout/fragment_pagina_pago" />
 
     <action
     android:id="@+id/action_inicio"
@@ -163,5 +168,13 @@
     <action
         android:id="@+id/action_peli1"
         app:destination="@id/peli1Fragment"/>
+    <action
+        android:id="@+id/action_paginaPago"
+        app:destination="@id/paginaPagoFragment"/>
+    <fragment
+        android:id="@+id/graciasFragment"
+        android:name="com.example.cinesaapp.GraciasFragment"
+        android:label="fragment_gracias"
+        tools:layout="@layout/fragment_gracias" />
 
 </navigation>
